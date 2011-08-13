@@ -35,12 +35,13 @@ module ActsAsVotable
     end
 
     # target objects for a vote
+    # use of find_by_id means that missing record will not throw an exception
     def target_votable_object
-      (self.votable_type.constantize).find(self.votable_id)
+      (self.votable_type.constantize).find_by_id(self.votable_id)
     end
 
     def target_voter_object
-      (self.voter_type.constantize).find(self.voter_id)
+      (self.voter_type.constantize).find_by_id(self.voter_id)
     end
   end
 

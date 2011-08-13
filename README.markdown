@@ -177,6 +177,12 @@ to speed up @post we would use the following migration:
       end
     end
 
+### The Votable object
+
+Access the target object of a vote:
+
+    @voter = @vote.target_voter_object
+
 ## Testing
 
 All tests follow the RSpec format and are located in the spec directory
