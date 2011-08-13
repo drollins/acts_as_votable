@@ -34,6 +34,14 @@ module ActsAsVotable
       }
     end
 
+    # target objects for a vote
+    def target_votable_object
+      (self.votable_type.constantize).find(self.votable_id)
+    end
+
+    def target_voter_object
+      (self.voter_type.constantize).find(self.voter_id)
+    end
   end
 
 end
