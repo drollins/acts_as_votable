@@ -100,7 +100,7 @@ module ActsAsVotable
 
       # results
       def find_votes extra_conditions = {}
-        ActsAsVotable::Vote.find(:all, :conditions => default_conditions.merge(extra_conditions))
+        ActsAsVotable::Vote.where(default_conditions.merge(extra_conditions))
       end
       alias :votes :find_votes
 
