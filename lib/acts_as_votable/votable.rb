@@ -100,11 +100,11 @@ module ActsAsVotable
 
       # results
       def find_votes extra_conditions = {}
-        #ActsAsVotable::Vote.where(default_conditions.merge(extra_conditions))
+        ActsAsVotable::Vote.where(default_conditions.merge(extra_conditions))
 
         # hard coded for User voter_type until can evaluate value of :voter_type and constantize inline
         # ensure only votes from existing users
-        ActsAsVotable::Vote.where(default_conditions.merge(extra_conditions)).where(:voter_id => User.select("id"))
+        #ActsAsVotable::Vote.where(default_conditions.merge(extra_conditions)).where(:voter_id => User.select("id"))
       end
       alias :votes :find_votes
 
